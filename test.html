@@ -5,66 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
         body {
-            background-color: rgb(20, 20, 20);
+            background-color: rgb(34, 33, 33);;
         }
 
+        /* #gridSizeButton {
+            display: block;
+            margin: 20px;
+        } */
+
         #container {
-            display: flex;
-            border: 2px solid red;
-            width: 750px;
-            height: 750px;
-            flex-direction: column;
+            width: 600px;
+            height: 600px;
+            /* display: inline-flex; */
+            /* flex-wrap: wrap; */
         }
+        
     </style>
 </head>
 <body>
-    <div id="container"></div>
-    <button id="button">change no of boxes</button>
+    <!-- <button id="gridSizeButton">Change grid size?</button> -->
+    <div id='container'></div>
 
     <script>
-        let containerJS = document.getElementById("container");
-        let noOfDivs = 2;
-        let changeButton = document.getElementById("button");
 
-        for (let i = 0; i<noOfDivs; i++) {
+        let gridSize = 0;
+        let containerJS = document.getElementById('container');
+
+        //  //button changes grid size
+        // let gridSizeChanger = document.getElementById('gridSizeButton');
+        // gridSizeChanger.addEventListener('click', function(){
+        //     let newGridSize = prompt('What would you like the new grid size to be? (add no. of squares needed in one line)');
+        //     gridSize = Number(newGridSize.textcontent);
+        // })
+        
+
+        //creating 256 divs inside the container
+        
+        
+        for (; gridSize<10; gridSize++) {
             let newDiv = document.createElement('div');
-            containerJS.appendChild(newDiv);
-            newDiv.style.border = '1px solid blue';
-            newDiv.style.flex = '1';
-            newDiv.style.display = 'flex';
-
-            for (let n = 0; n<noOfDivs; n++) {
-                let rowBlock = document.createElement('div');
-                newDiv.appendChild(rowBlock);
-                rowBlock.style.border = '1px solid green';
-                rowBlock.style.flex = '1';
-            }
+            newDiv.style.flex = 1;
             
-
-        }
-
-        changeButton.addEventListener('click', function(){
-            containerJS.innerHTML = '';
-            noOfDivs = Number(prompt('add new number?'));
-            for (let i = 0; i<noOfDivs; i++) {
-            let newDiv = document.createElement('div');
+            newDiv.style.backgroundColor = 'black';
+            newDiv.style.border = '1px dashed RGB(160,160,255)'
             containerJS.appendChild(newDiv);
-            newDiv.style.border = '1px solid blue';
-            newDiv.style.flex = '1';
-            newDiv.style.display = 'flex';
 
-            for (let n = 0; n<noOfDivs; n++) {
-                let rowBlock = document.createElement('div');
-                newDiv.appendChild(rowBlock);
-                rowBlock.style.border = '1px solid green';
-                rowBlock.style.flex = '1';
-            }
+            //adding hover effect on the grid
+            newDiv.addEventListener('mouseenter', function(){
+                newDiv.style.backgroundColor = 'gray';
+            })  
         }
-        })
-        
-        
     </script>
-    
 </body>
 </html>
