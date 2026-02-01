@@ -44,19 +44,23 @@
         //creating 256 divs inside the container
         
         
-        for (; gridSize<10; gridSize++) {
-            let newDiv = document.createElement('div');
-            newDiv.style.flex = 1;
+        // for (; gridSize<10; gridSize++) {
+        //     let newDiv = document.createElement('div');
+        //     newDiv.style.flex = 1;
             
-            newDiv.style.backgroundColor = 'black';
-            newDiv.style.border = '1px dashed RGB(160,160,255)'
-            containerJS.appendChild(newDiv);
+        //     newDiv.style.backgroundColor = 'black';
+        //     newDiv.style.border = '1px dashed RGB(160,160,255)'
+        //     containerJS.appendChild(newDiv);
 
-            //adding hover effect on the grid
-            newDiv.addEventListener('mouseenter', function(){
-                newDiv.style.backgroundColor = 'gray';
-            })  
-        }
+        //     //adding hover effect on the grid
+        //     newDiv.addEventListener('mouseenter', function(){
+        //         newDiv.style.backgroundColor = 'gray';
+        //     })  
+        // }
+
+        x = Number(prompt('enter a whole number between 1 to 10'));
+        console.log(x);
+        console.log(typeof(x));
     </script>
 </body>
 </html>

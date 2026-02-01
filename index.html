@@ -51,10 +51,9 @@
             containerJS.innerHTML = '';
             
             noOfDivs = Number(prompt('add new number?'));
-            if (noOfDivs < 1 || noOfDivs > 100) {
-                noOfDivs = Number(prompt('Please enter a number between 1-100: '));
+            while (noOfDivs < 1 || noOfDivs > 100 || Number.isNaN(noOfDivs)) {
+                noOfDivs = Number(prompt('Please enter a number between 1-100: '))
             }
-                
             
             for (let i = 0; i<noOfDivs; i++) {
             let newDiv = document.createElement('div');
